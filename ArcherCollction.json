@@ -1,0 +1,17 @@
+{
+  "name": "Archer #1",
+  "description": "Archer Collection!",
+  "image": "https://gray-managing-penguin-864.mypinata.cloud/ipfs/QmaVMmjzfaXio9h6T3qog9sAFB9wt5n7QJhwguvro5U1Lt",
+  "external_url": "",
+  "attributes": [
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gray-managing-penguin-864.mypinata.cloud/ipfs/QmaVMmjzfaXio9h6T3qog9sAFB9wt5n7QJhwguvro5U1Lt",
+        "type": "image/jpg"
+      }
+    ],
+    "category": "image"
+  }
+}

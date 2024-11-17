@@ -1,0 +1,17 @@
+{
+  "name": "Saber",
+  "description": "Saber Collection!",
+  "image": "https://gray-managing-penguin-864.mypinata.cloud/ipfs/QmaAELomGUthxFhJZaYrVjCu4dUkPBfRxiNp9QXSagjq8e",
+  "external_url": "",
+  "attributes": [
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gray-managing-penguin-864.mypinata.cloud/ipfs/QmaAELomGUthxFhJZaYrVjCu4dUkPBfRxiNp9QXSagjq8e",
+        "type": "image/jpg"
+      }
+    ],
+    "category": "image"
+  }
+}
