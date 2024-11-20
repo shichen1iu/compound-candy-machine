@@ -33,24 +33,44 @@ let recipient = umi.eddsa.createKeypairFromSecretKey(
 
 umi.use(keypairIdentity(recipient)).use(mplCore()).use(mplCandyMachine());
 
+const archerCandyMachineId = publicKey(
+  "CjZro7Sj8P1SZV1VZTozPiLHkVr3o7EsRFjswUkHxgHY"
+);
+const archerCollection = publicKey(
+  "2BmLWt3kos1cqcakhoyEXXET5rywA3TmCU3nPDysoSj7"
+);
+const archerAsset = generateSigner(umi);
+
+const archerMintV1Tx = await mintV1(umi, {
+  candyMachine: archerCandyMachineId,
+  asset: archerAsset,
+  collection: archerCollection,
+  mintArgs: {
+    solPayment: some({ destination: payer.publicKey }),
+  },
+}).sendAndConfirm(umi);
+console.log("minted archer asset address", archerAsset.publicKey);
+const archerMintV1TxSignature = bs58.encode(archerMintV1Tx.signature);
+console.log("archerMintV1TxSignature", archerMintV1TxSignature);
+// console.log("mintV1TxResult", mintV1Tx.result);
+
 const saberCandyMachineId = publicKey(
-  "LLkdPGT1688uCH3DTU64tTM3w7DnpJNTohXuL3Pv1SW"
+  "3vTAg4LUWRN9ua5XPsgRRd3Ko7vkZSjUvDgjL6Rhuoi7"
 );
 const saberCollection = publicKey(
-  "AgzmJaNWshppdAhig9MkkakzLdvz46WorJ3m7EQPCAb9"
+  "CQRnfDn2iLnEf8oiA8Nr9HkNNwufSoNH7f4LhQtCmQwn"
 );
-const asset = generateSigner(umi);
-console.log("minted saber asset address", asset.publicKey);
+const saberAsset = generateSigner(umi);
 
-const mintV1Tx = await mintV1(umi, {
+const saberMintV1Tx = await mintV1(umi, {
   candyMachine: saberCandyMachineId,
-  asset,
+  asset: saberAsset,
   collection: saberCollection,
   mintArgs: {
     solPayment: some({ destination: payer.publicKey }),
   },
 }).sendAndConfirm(umi);
-
-const mintV1TxSignature = bs58.encode(mintV1Tx.signature);
-console.log("mintV1TxSignature", mintV1TxSignature);
-console.log("mintV1TxResult", mintV1Tx.result);
+console.log("minted saber asset address", saberAsset.publicKey);
+const saberMintV1TxSignature = bs58.encode(saberMintV1Tx.signature);
+console.log("saberMintV1TxSignature", saberMintV1TxSignature);
+// console.log("mintV1TxResult", mintV1Tx.result);

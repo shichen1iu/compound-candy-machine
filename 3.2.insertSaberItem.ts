@@ -22,7 +22,7 @@ let payer = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(devA));
 umi.use(keypairIdentity(payer)).use(mplCore()).use(mplCandyMachine());
 
 const saberCandyMachine = publicKey(
-  "LLkdPGT1688uCH3DTU64tTM3w7DnpJNTohXuL3Pv1SW"
+  "3vTAg4LUWRN9ua5XPsgRRd3Ko7vkZSjUvDgjL6Rhuoi7"
 );
 
 await insertItems(umi, saberCandyMachine);
@@ -31,7 +31,7 @@ await insertItems(umi, saberCandyMachine);
 function generateConfigLines(start: number, count: number) {
   return Array.from({ length: count }, (_, i) => ({
     name: (start + i + 1).toString(),
-    uri: "QmWzExvH4RRfgLrdGeLQtN2Dcy1g8trwpKuDuBg1nT9p5R",
+    uri: "QmWZnX6gfDxeVRmL51gyxXkRaeRYS86MNipoNYdVer7Wky",
   }));
 }
 
@@ -39,7 +39,7 @@ function generateConfigLines(start: number, count: number) {
 async function insertItems(
   umi: Umi,
   candyMachineAddress: string,
-  totalItems: number = 1000,
+  totalItems: number = 1500,
   batchSize: number = 10
 ) {
   console.log(`开始插入 ${totalItems} 个 items...`);

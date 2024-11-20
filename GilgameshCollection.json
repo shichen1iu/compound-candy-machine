@@ -1,0 +1,17 @@
+{
+  "name": "Gilgamesh",
+  "description": "Gilgamesh Collection!",
+  "image": "https://gray-managing-penguin-864.mypinata.cloud/ipfs/QmYUstxpJioR3P8i8KFpoG66CXkzVgnk2YGDQXj43k73La",
+  "external_url": "",
+  "attributes": [
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://gray-managing-penguin-864.mypinata.cloud/ipfs/QmYUstxpJioR3P8i8KFpoG66CXkzVgnk2YGDQXj43k73La",
+        "type": "image/jpg"
+      }
+    ],
+    "category": "image"
+  }
+}
