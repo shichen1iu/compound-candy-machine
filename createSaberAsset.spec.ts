@@ -1,6 +1,7 @@
 import {
   createCollection,
   create,
+  fetchAsset,
   fetchAssetsByCollection,
   fetchCollection,
   mplCore,
@@ -44,12 +45,12 @@ const testAsset = generateSigner(umi);
 const testUnknownAuthority = generateSigner(umi);
 let createSaberAssettx = await create(umi, {
   asset: testAsset,
-  collection: testCollectionSigner,
-  // authority: testCollectionSigner,
+  // collection: testCollectionSigner,
+  authority: testCollectionSigner,
   // authority: testUnknownAuthority,
   name: "Test Asset",
   owner: publicKey(payer.publicKey),
-  // updateAuthority: testCollectionSigner.publicKey,
+  updateAuthority: testCollectionSigner.publicKey,
   uri: "https://gray-managing-penguin-864.mypinata.cloud/ipfs/QmVkDi61XfpdG7fZibX6tRx17rHmxyH3PHJVBChcRhkhQx",
 }).sendAndConfirm(umi);
 
@@ -64,6 +65,12 @@ console.log(
 const collection = await fetchCollection(umi, testCollectionSigner.publicKey);
 
 console.log("Collection Info", collection);
+
+const fetchedAsset = await fetchAsset(umi, testAsset.publicKey);
+
+console.log("Fetch Asset", fetchedAsset);
+
+await new Promise((resolve) => setTimeout(resolve, 1000));
 
 const assetsByCollection = await fetchAssetsByCollection(
   umi,
